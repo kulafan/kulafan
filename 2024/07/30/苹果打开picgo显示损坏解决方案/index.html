@@ -26,12 +26,12 @@
 <meta property="og:site_name" content="Kulafan&#39;s Blog">
 <meta property="og:description" content="Mac(M2) 安装 picgo 问题 安装方式1brew install picgo --cask   安装版本为 2.3.1 问题1: 安装后打开 picgo 报错：xxx 已损坏，无法打开。 您应该将它移到废纸篓解决方法： 终端输入： 1sudo xattr -r -d com.apple.quarantine 你的APP路径  APP 路径的获取方法：  打开 “访达”（Finder）进入">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/kulafan/myPic/master/uoload/202306272143857.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/202306272143857.png">
 <meta property="article:published_time" content="2024-07-30T11:04:44.000Z">
-<meta property="article:modified_time" content="2024-07-30T11:05:54.068Z">
+<meta property="article:modified_time" content="2024-07-31T03:14:08.008Z">
 <meta property="article:author" content="kulafan">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/kulafan/myPic/master/uoload/202306272143857.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/202306272143857.png">
 
 
 <link rel="canonical" href="http://example.com/2024/07/30/%E8%8B%B9%E6%9E%9C%E6%89%93%E5%BC%80picgo%E6%98%BE%E7%A4%BA%E6%8D%9F%E5%9D%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
@@ -183,9 +183,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-07-30 19:04:44 / 修改时间：19:05:54" itemprop="dateCreated datePublished" datetime="2024-07-30T19:04:44+08:00">2024-07-30</time>
+      <time title="创建时间：2024-07-30 19:04:44" itemprop="dateCreated datePublished" datetime="2024-07-30T19:04:44+08:00">2024-07-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-07-31 11:14:08" itemprop="dateModified" datetime="2024-07-31T11:14:08+08:00">2024-07-31</time>
     </span>
 
   
@@ -210,7 +216,7 @@
 <li>打开 “访达”（Finder）进入 “应用程序” 目录，找到该软件图标，将图标拖到终端窗口，最终的命令类似 <code>sudo xattr -r -d com.apple.quarantine &#39;/Applications/PicGo.app&#39;</code></li>
 </ul>
 <h2 id="问题2-无法从剪贴板上传"><a href="#问题2-无法从剪贴板上传" class="headerlink" title="问题2: 无法从剪贴板上传"></a>问题2: 无法从剪贴板上传</h2><p>现象： 配置好 cos 之后，可以正常从本地推动到主窗口上传，但在剪贴板上的“等待上传” 则点击无效。</p>
-<p><img src="https://raw.githubusercontent.com/kulafan/myPic/master/uoload/202306272143857.png" alt="等待上传"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/kulafan/myPic/upload/202306272143857.png" alt="等待上传"></p>
 <p>排查方式： 打开picgo 的日志文件， 在 “主窗口–PicGo设置–设置日志文件（点击设置） – 日志文件（点击打开）， 如果其中的报错是如下格式，可以检查一下对应目录 picgo-clipboard-images 是否存在，不存在手动创建一个</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: ENOENT: no such file or directory, open &#x27;/Users/coreylin/Library/Application Support/picgo/picgo-clipboard-images/202306272131465.png.3840258425&#x27;</span><br></pre></td></tr></table></figure>
 
