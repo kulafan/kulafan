@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.kulafan.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Kulafan&#39;s Blog">
@@ -76,6 +76,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -84,11 +85,37 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-sitemap fa-fw"></i>工具</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </header>
         
@@ -113,6 +140,8 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="kulafan"
+      src="/images/Kulafan_logo.jpg">
   <p class="site-author-name" itemprop="name">kulafan</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -120,18 +149,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -157,10 +186,285 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/11/13/2016-11-13%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%9E%AA%E6%88%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/11/13/2016-11-13%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%9E%AA%E6%88%98/" class="post-title-link" itemprop="url">第一次枪战11.13，但一切都会随风逝去。。。</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-11-13 16:38:52" itemprop="dateCreated datePublished" datetime="2016-11-13T16:38:52+08:00">2016-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-08-01 19:21:07" itemprop="dateModified" datetime="2024-08-01T19:21:07+08:00">2024-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/%E9%AB%98%E4%B8%89/" itemprop="url" rel="index"><span itemprop="name">高三</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="/2016/11/13/2016-11-13%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%9E%AA%E6%88%98/tumblr_ogl7b1NqOS1us4j0fo1_1280.png" alt="img"></p>
+<p><img src="/2016/11/13/2016-11-13%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%9E%AA%E6%88%98/tumblr_ogl7b1NqOS1us4j0fo2_1280.png" alt="img"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/11/13/2016-11-13%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%9E%AA%E6%88%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/10/26/2016-10-26%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/10/26/2016-10-26%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95/" class="post-title-link" itemprop="url">期中考试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-10-26 16:37:39" itemprop="dateCreated datePublished" datetime="2016-10-26T16:37:39+08:00">2016-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-08-01 19:20:12" itemprop="dateModified" datetime="2024-08-01T19:20:12+08:00">2024-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/%E9%AB%98%E4%B8%89/" itemprop="url" rel="index"><span itemprop="name">高三</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>因为这几天太热了状态不好，考砸了。。<br>造反了好多次，但是并没有什么用，最后惊动了家长，老师貌似有些害怕。今天中午开了空调，但是晚上又没有。好热啊<br>这样下去学习成绩怎么提高？祝我好运吧。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/10/19/2016-10-19%E9%AB%98%E4%B8%89%E7%AC%AC%E4%BA%8C%E6%AC%A1%E9%80%A0%E5%8F%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
+      <meta itemprop="name" content="kulafan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Kulafan's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/10/19/2016-10-19%E9%AB%98%E4%B8%89%E7%AC%AC%E4%BA%8C%E6%AC%A1%E9%80%A0%E5%8F%8D/" class="post-title-link" itemprop="url">高三第二次造反</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-10-19 16:33:34" itemprop="dateCreated datePublished" datetime="2016-10-19T16:33:34+08:00">2016-10-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-08-01 19:20:15" itemprop="dateModified" datetime="2024-08-01T19:20:15+08:00">2024-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/%E9%AB%98%E4%B8%89/" itemprop="url" rel="index"><span itemprop="name">高三</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>第一次是9月5日，以后补充<br>这次是10月18日，因为室内太热了，晚上睡不着，我们热的蛋疼就要求宿管开空调。<br>可是宿管表示领导不让开，造反开始了。<br>先是我们几个宿舍轮流喊 开空调！ 然后逐渐越来越多人走出宿舍霸占走道，宿管叫来老师，开骂了，老师表示 我在家一个月也没开空调。 我去。。你家的大？住几个人？我们六个人挤在一个小房间，而且不通风。老师不爽叫来了级长，级长一上来就强硬地要求我们回宿舍，我们正气头上，你说回就回？我们搬来床板，“威胁”他们不开空调我们今晚就打地铺了。看看身后 一班的兄弟们也来了，可就是不见民主斗士的出现。<br>很级长谈判无果，级长说这是规定，10月之后从来都不开空调。可是现在全球变暖，而且温度确实上升了。级长要求我们拿出证据证明全球变暖。。。<br>没办法了，我们要求在过道打地铺，级长也只好妥协，但是要求别讲话。<br>后来大概十二点左右，气温降低了，其实我们都有点撑不住了，级长过来对我们说“其实我也想给你们开啊，可是我没那么大权利，这是学校规定的，我也帮不了你们。。。”我们见他态度好转，便收拾东西回去了，为了不让一班以为我们“背叛革命”我们派人去通知，然后级长又跟他们重复了一遍，他们也回去了，这次造反才平息了。<br>其实理性地想想，我们确实有点不理智，但12点之前我发誓真的很热，只是后半夜温度降低了。我们的造反不完全是无理取闹的，只是没考虑那么多，我们当时就是很热。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/10/19/2016-10-19%E4%B8%8B%E4%BA%86%E4%B8%89%E5%A4%A9%E9%9B%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -193,7 +497,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:34:22" itemprop="dateModified" datetime="2024-07-31T16:34:22+08:00">2024-07-31</time>
+      <time title="修改时间：2024-08-01 19:20:53" itemprop="dateModified" datetime="2024-08-01T19:20:53+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -202,6 +506,10 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/%E9%AB%98%E4%B8%89/" itemprop="url" rel="index"><span itemprop="name">高三</span></a>
         </span>
     </span>
 
@@ -242,10 +550,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/07/31/%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/07/31/2016-07-31%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -260,7 +568,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/07/31/%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/" class="post-title-link" itemprop="url">很高兴的一天</a>
+          <a href="/2016/07/31/2016-07-31%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/" class="post-title-link" itemprop="url">很高兴的一天</a>
         </h2>
 
         <div class="post-meta-container">
@@ -278,7 +586,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:45:08" itemprop="dateModified" datetime="2024-07-31T16:45:08+08:00">2024-07-31</time>
+      <time title="修改时间：2024-08-01 19:20:35" itemprop="dateModified" datetime="2024-08-01T19:20:35+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -287,6 +595,10 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/%E9%AB%98%E4%B8%89/" itemprop="url" rel="index"><span itemprop="name">高三</span></a>
         </span>
     </span>
 
@@ -300,11 +612,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="/2016/07/31/%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/tumblr_ofdwpaVKyj1us4j0fo1_1280.png" alt="img"></p>
-<p><img src="/2016/07/31/%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/tumblr_ofdwpaVKyj1us4j0fo2_640.png" alt="img"></p>
-<p><img src="/2016/07/31/%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/tumblr_ofdwpaVKyj1us4j0fo3_640.png" alt="img"></p>
-<p>很高兴的一天，下午第一节课前收到了台风放假的通知，兴奋了两节课。第三节课是文综测验我已经没心情做下去了，只有压抑不住的兴奋。可是下课后，跑步的哨子响了，是不是意味着不放假了？？？？<br>我们下去时得知，黄色预警才放假，可现在蓝色，我们按耐不住了，再来次造反？放假造反？？这肯定被学校干死。<br>后来级长不知说了些什么，全部人都在欢呼，但一定是好事。级长说跑完步就放假，心里一颗石头总算沉了下来，因为放这次假对我来说很重要，因为我充电宝没电了。<br>回到宿舍我妈说她不知道放假，才刚刚在路上，我就跟鸡超 Con 添哥打球了。每次跟鸡超打都是各种手感好，怎么投怎么中，六点多在室内脱掉眼镜，几乎什么都看不见了，还是很准，我也很无奈。。。</p>
-
+          <p><img src="/2016/07/31/2016-07-31%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/tumblr_ofdwpaVKyj1us4j0fo1_1280.png" alt="img"></p>
+<p><img src="/2016/07/31/2016-07-31%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/tumblr_ofdwpaVKyj1us4j0fo2_640.png" alt="img"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/07/31/2016-07-31%E5%BE%88%E9%AB%98%E5%85%B4%E7%9A%84%E4%B8%80%E5%A4%A9/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -333,7 +650,7 @@
     <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/07/20/2016-7-20%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -381,8 +698,14 @@
     <div class="post-body" itemprop="articleBody">
           <p><img src="/2016/07/20/2016-7-20%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/tumblr_oameudhd3r1us4j0fo1_1280.png" alt="img"></p>
 <p><img src="/2016/07/20/2016-7-20%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/tumblr_oatdlcUuqQ1us4j0fo1_1280-1.png" alt="img"></p>
-<p><img src="/2016/07/20/2016-7-20%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/tumblr_oauvp9mNqH1us4j0fo1_1280-1.png" alt="img"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/07/20/2016-7-20%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -411,7 +734,7 @@
     <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/07/20/2016-7-20%E5%88%9D%E4%B8%AD%E8%81%9A%E4%BC%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -484,10 +807,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/05/12/2016-05-12%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -502,7 +825,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/" class="post-title-link" itemprop="url">三十里意志行</a>
+          <a href="/2016/05/12/2016-05-12%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/" class="post-title-link" itemprop="url">三十里意志行</a>
         </h2>
 
         <div class="post-meta-container">
@@ -542,14 +865,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o71rs7bf2n1us4j0fo1_1280.png" alt="img"></p>
-<p><img src="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o71rs7bf2n1us4j0fo2_1280.png" alt="img"></p>
-<p><img src="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o71rs7bf2n1us4j0fo3_1280.png" alt="img"></p>
-<p><img src="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o7cxfrP0gv1us4j0fo1_1280.png" alt="img"></p>
-<p><img src="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o7cxfrP0gv1us4j0fo2_1280.png" alt="img"></p>
+          <p><img src="/2016/05/12/2016-05-12%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o71rs7bf2n1us4j0fo1_1280.png" alt="img"></p>
+<p><img src="/2016/05/12/2016-05-12%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/tumblr_o71rs7bf2n1us4j0fo2_1280.png" alt="img"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2016/05/12/%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/#more" rel="contents">
+              <a class="btn" href="/2016/05/12/2016-05-12%E4%B8%89%E5%8D%81%E9%87%8C%E6%84%8F%E5%BF%97%E8%A1%8C/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -583,7 +903,7 @@
     <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -616,7 +936,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:48:20" itemprop="dateModified" datetime="2024-07-31T16:48:20+08:00">2024-07-31</time>
+      <time title="修改时间：2024-08-01 19:18:19" itemprop="dateModified" datetime="2024-08-01T19:18:19+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -625,10 +945,6 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%91%84%E5%BD%B1/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
         </span>
     </span>
 
@@ -644,9 +960,6 @@
     <div class="post-body" itemprop="articleBody">
           <p><img src="/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/tumblr_o4z9v6I0sR1us4j0fo1_1280.png" alt="img"></p>
 <p><img src="/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/tumblr_o5h9actL0p1us4j0fo1_1280.png" alt="img"></p>
-<p><img src="/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/tumblr_o5h9actL0p1us4j0fo2_1280.png" alt="img"></p>
-<p><img src="/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/tumblr_o5h9jvjArN1us4j0fo1_1280.png" alt="img"></p>
-<p><img src="/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/tumblr_o5h9xiuo9h1us4j0fo1_1280.png" alt="img"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/04/19/2016-04-19%E7%9A%84%E7%94%B5%E7%BA%BF%E6%9D%86/#more" rel="contents">
@@ -680,10 +993,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/03/19/%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90/">
+    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/03/19/2016-03-19%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/Kulafan_logo.jpg">
       <meta itemprop="name" content="kulafan">
     </span>
 
@@ -698,7 +1011,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/03/19/%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">受力分析</a>
+          <a href="/2016/03/19/2016-03-19%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">受力分析</a>
         </h2>
 
         <div class="post-meta-container">
@@ -716,7 +1029,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:18:55" itemprop="dateModified" datetime="2024-07-31T16:18:55+08:00">2024-07-31</time>
+      <time title="修改时间：2024-08-01 19:20:50" itemprop="dateModified" datetime="2024-08-01T19:20:50+08:00">2024-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -725,6 +1038,10 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/%E9%AB%98%E4%B8%89/" itemprop="url" rel="index"><span itemprop="name">高三</span></a>
         </span>
     </span>
 
@@ -740,266 +1057,14 @@
     <div class="post-body" itemprop="articleBody">
           <p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o49w243HkG1us4j0fo1_1280.jpg" alt="img"></p>
 <p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o49w243HkG1us4j0fo2_1280.jpg" alt="img"></p>
-<p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o49w243HkG1us4j0fo3_1280.jpg" alt="img"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/03/11/%E4%B8%8D%E5%96%9D%E5%8F%AF%E4%B9%90%E4%BC%9A%E6%AD%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kulafan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kulafan's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Kulafan's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/03/11/%E4%B8%8D%E5%96%9D%E5%8F%AF%E4%B9%90%E4%BC%9A%E6%AD%BB/" class="post-title-link" itemprop="url">不喝可乐会死</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-03-11 16:16:29" itemprop="dateCreated datePublished" datetime="2016-03-11T16:16:29+08:00">2016-03-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:16:45" itemprop="dateModified" datetime="2024-07-31T16:16:45+08:00">2024-07-31</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3weaevZMs1us4j0fo1_1280.jpg" alt="img"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2016/03/05/%E8%B7%AF%E8%BF%87%E6%B5%8E%E5%B7%9D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kulafan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kulafan's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Kulafan's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/03/05/%E8%B7%AF%E8%BF%87%E6%B5%8E%E5%B7%9D/" class="post-title-link" itemprop="url">路过济川</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-03-05 16:11:47" itemprop="dateCreated datePublished" datetime="2016-03-05T16:11:47+08:00">2016-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:45:47" itemprop="dateModified" datetime="2024-07-31T16:45:47+08:00">2024-07-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82%E8%B0%88/" itemprop="url" rel="index"><span itemprop="name">杂谈</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3kv2ygkLZ1us4j0fo4_1280.jpg" alt="img"></p>
-<p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3kv2ygkLZ1us4j0fo5_1280.jpg" alt="img"></p>
-<p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3kv2ygkLZ1us4j0fo1_1280.jpg" alt="img"><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3kv2ygkLZ1us4j0fo3_1280.jpg" alt="img"></p>
-<p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3kv2ygkLZ1us4j0fo2_1280.jpg" alt="img"></p>
-<p><img src="https://www.kulafan.com/wp-content/uploads/2016/03/tumblr_o3kv2ygkLZ1us4j0fo6_1280.jpg" alt="img"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2016/03/05/%E8%B7%AF%E8%BF%87%E6%B5%8E%E5%B7%9D/#more" rel="contents">
+              <a class="btn" href="/2016/03/19/2016-03-19%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.kulafan.com/2015/10/28/24%E4%B8%AA%E6%AF%94%E5%88%A9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kulafan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kulafan's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Kulafan's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/10/28/24%E4%B8%AA%E6%AF%94%E5%88%A9/" class="post-title-link" itemprop="url">24个比利</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-10-28 16:09:59" itemprop="dateCreated datePublished" datetime="2015-10-28T16:09:59+08:00">2015-10-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-31 16:11:15" itemprop="dateModified" datetime="2024-07-31T16:11:15+08:00">2024-07-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AF%BB%E4%B9%A6/" itemprop="url" rel="index"><span itemprop="name">读书</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="/2015/10/28/24%E4%B8%AA%E6%AF%94%E5%88%A9/tumblr_nwxcfzSOa21us4j0fo1_1280.png" alt="img"></p>
-<p>无缘无故冒出几个人名，感觉好像前面发生了什么你错过的事情。看到我人格分裂</p>
-
       
     </div>
 
@@ -1062,7 +1127,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
 
 
 
